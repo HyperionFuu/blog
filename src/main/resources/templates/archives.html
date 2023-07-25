@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="_fragments :: head(~{::title})">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>归档</title>
+</head>
+<body>
+
+  <!-- 导航 -->
+  <nav th:replace="_fragments::menu(4)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+    <div class="ui container">
+      <div class="ui inverted secondary stackable menu">
+        <h2 class="ui teal header item">Blog</h2>
+        <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>标签</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i>归档</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="info icon"></i>关于我</a>
+        <div class="right m-item item m-mobile-hide">
+          <div class="ui icon inverted transparent input">
+            <input type="text" class="text" placeholder="Search..">
+            <i class="search link icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+      <i class="sidebar icon"></i>
+    </a>
+  </nav>
+
+  <!-- 中间内容 -->
+  <div class="m-container-small padded m-padded-tb-big">
+    <div class="ui container">
+      <!-- header -->
+      <div class="ui top attached segment">
+        <div class="ui middle aligned two column grid">
+          <div class="column">
+            <h3 class="ui teal header">归档</h3>
+          </div>
+          <div class="right aligned column">
+            共 <h2 class="ui orange header m-inline-block m-text-thin">114</h2>篇博客
+          </div>
+        </div>
+      </div>
+      
+      <h3 class="ui center aligned header">2017</h3>
+      <div class="ui fluid vertical menu">
+        <a href="#" class="item" target="_blank">
+          <span>
+            <i class="mini teal circle icon"></i>关于刻意练习的清单
+            <div class="ui teal basic left pointing label m-padded-mini">9月3日</div>
+          </span>
+          <div class="ui orange basic left pointing label m-padded-mini">原创</div>
+        </a>
+        <a href="#" class="item" target="_blank">
+          <span>
+            <i class="mini teal circle icon"></i>关于刻意练习的清单
+            <div class="ui teal basic left pointing label m-padded-mini">9月3日</div>
+          </span>
+          <div class="ui orange basic left pointing label m-padded-mini">原创</div>
+        </a>
+        <a href="#" class="item" target="_blank">
+          <span>
+            <i class="mini teal circle icon"></i>关于刻意练习的清单
+            <div class="ui teal basic left pointing label m-padded-mini">9月3日</div>
+          </span>
+          <div class="ui orange basic left pointing label m-padded-mini">原创</div>
+        </a>
+        <a href="#" class="item" target="_blank">
+          <span>
+            <i class="mini teal circle icon"></i>关于刻意练习的清单
+            <div class="ui teal basic left pointing label m-padded-mini">9月3日</div>
+          </span>
+          <div class="ui orange basic left pointing label m-padded-mini">原创</div>
+        </a>
+        <a href="#" class="item" target="_blank">
+          <span>
+            <i class="mini teal circle icon"></i>关于刻意练习的清单
+            <div class="ui teal basic left pointing label m-padded-mini">9月3日</div>
+          </span>
+          <div class="ui orange basic left pointing label m-padded-mini">原创</div>
+        </a>
+      </div>
+
+      <h3 class="ui center aligned header">2016</h3>
+      <div class="ui fluid vertical menu">
+        <a href="#" class="item" target="_blank">
+          <span>
+            <i class="mini teal circle icon"></i>关于刻意练习的清单
+            <div class="ui teal basic left pointing label m-padded-mini">9月3日</div>
+          </span>
+          <div class="ui orange basic left pointing label m-padded-mini">原创</div>
+        </a>
+        <a href="#" class="item" target="_blank">
+          <span>
+            <i class="mini teal circle icon"></i>关于刻意练习的清单
+            <div class="ui teal basic left pointing label m-padded-mini">9月3日</div>
+          </span>
+          <div class="ui orange basic left pointing label m-padded-mini">原创</div>
+        </a>
+        <a href="#" class="item" target="_blank">
+          <span>
+            <i class="mini teal circle icon"></i>关于刻意练习的清单
+            <div class="ui teal basic left pointing label m-padded-mini">9月3日</div>
+          </span>
+          <div class="ui orange basic left pointing label m-padded-mini">原创</div>
+        </a>
+        <a href="#" class="item" target="_blank">
+          <span>
+            <i class="mini teal circle icon"></i>关于刻意练习的清单
+            <div class="ui teal basic left pointing label m-padded-mini">9月3日</div>
+          </span>
+          <div class="ui orange basic left pointing label m-padded-mini">原创</div>
+        </a>
+        <a href="#" class="item" target="_blank">
+          <span>
+            <i class="mini teal circle icon"></i>关于刻意练习的清单
+            <div class="ui teal basic left pointing label m-padded-mini">9月3日</div>
+          </span>
+          <div class="ui orange basic left pointing label m-padded-mini">原创</div>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <!-- 底部footer -->
+  <footer class="ui inverted vertical segment m-padded-tb-massive">
+  
+  </footer>
+
+
+  <th:block th:replace="_fragments::script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+  </th:block>
+  <script>
+    $('.menu.toggle').click(function(){
+      $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+  </script>
+</body>
+</html>
