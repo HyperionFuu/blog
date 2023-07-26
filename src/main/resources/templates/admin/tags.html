@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:replace="admin/_fragments::head(~{::title})">
+<head th:replace="admin/_fragments :: head(~{::title})">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>博客管理</title>
+  <title>标签管理</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
   <link rel="stylesheet" href="../../static/css/me.css">
 </head>
 <body>
 
   <!-- 导航 -->
-  <nav th:replace="admin/_fragments::menu(1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+  <nav th:replace="admin/_fragments::menu(3)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
     <div class="ui container">
       <div class="ui inverted secondary stackable menu">
         <h2 class="ui teal header item">管理后台</h2>
@@ -40,8 +40,8 @@
   <div class="ui attached pointing menu">
     <div class="ui container">
       <div class="right menu">
-        <a href="#" class="item">发布</a>
-        <a href="#" class="teal active item">列表</a>
+        <a href="#" class="item" th:href="@{/admin/tags/input}">新增</a>
+        <a href="#" class="teal active item" th:href="@{/admin/tags/}">列表</a>
       </div>
     </div>
   </div>
@@ -49,12 +49,41 @@
   <!-- 中间内容 -->
   <div class="m-container-small m-padded-tb-big">
     <div class="ui container">
-      <div class="ui success large message">
-        <h3>Hi</h3>
-        <p>付鑫，欢迎登录！</p>
+      <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+        <i class="close icon"></i>
+        <div class="header"> 提示：</div>
+        <p th:text="${message}">恭喜，操作成功！</p>
       </div>
-
-      <img src="https://picsum.photos/id/177/800/450" class="ui rounded bordered fluid image">
+      <table class="ui celled table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>名称</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="tag, iterStat:${page.content}">
+            <td th:text="${iterStat.count}"></td>
+            <td th:text="${tag.name}"></td>
+            <td>
+              <a href="#" th:href="@{/admin/tags/{id}/edit(id=${tag.id})}" class="ui mini teal basic button">编辑</a>
+              <a href="#" th:href="@{/admin/tags/{id}/delete(id=${tag.id})}" class="ui mini red basic button">删除</a>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th colspan="6">
+              <div class="ui mini pagination menu" th:if="${page.totalPages} > 1">
+                <a href="#" th:href="@{/admin/tags(page=${page.number}-1)}" class="item" th:unless="${page.first}">上一页</a>
+                <a href="#" th:href="@{/admin/tags(page=${page.number}+1)}" class="item" th:unless="${page.last}">下一页</a>
+              </div>
+              <a href="#" th:href="@{/admin/tags/input}" class="ui mini right floated teal basic button">新增</a>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
     </div>
   </div>
   <br>
@@ -104,6 +133,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
   </th:block>
+
   <script>
     $('.menu.toggle').click(function(){
       $('.m-item').toggleClass('m-mobile-hide');
@@ -111,6 +141,13 @@
 
     $('.ui.dropdown').dropdown({
       on : 'hover'
+    });
+
+    $('.message .close')
+      .on('click',function(){
+        $(this)
+          .closest('.message')
+          .transition('fade');
     });
 
   </script>

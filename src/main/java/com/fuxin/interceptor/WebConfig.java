@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
- * Description: WebConcif
+ * Description: WebConcifg
  * Author: Fuu
  * Date: 2023/7/25
  */
