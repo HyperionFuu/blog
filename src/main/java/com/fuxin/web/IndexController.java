@@ -20,10 +20,4 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("/{url}")
-    public String url(@PathVariable String url){
-        return url;
-    }
-
-
 }

@@ -5,7 +5,7 @@ spring:
   thymeleaf:
     mode: HTML
   profiles:
-    active: prod
+    active: dev
   http:
     encoding:
       charset: utf-8
