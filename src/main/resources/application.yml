@@ -1,13 +1,15 @@
-server:
-  context-path: /blog
-
 spring:
   thymeleaf:
     mode: HTML
   profiles:
     active: dev
+  messages:
+    basename: i18n/messages
   http:
     encoding:
       charset: utf-8
       force: true
       enabled: true
+
+comment.avatar: /images/avatar.png
+
